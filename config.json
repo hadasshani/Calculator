@@ -10,7 +10,7 @@
       "manufacturer" : "Samsung"
     }
   ],
-  "tags" : ["plugin", "espresso", "demo"],
+  "tags" : ["plugin", "espresso", "demo", 'hadas'],
   "projectName": "calculator",
   "projectVersion": "1",
   "jobName": "espresso Testing",
