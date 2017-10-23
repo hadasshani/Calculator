@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.perfectomobile.instrumentedtest.gradleplugin'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.0"
+    defaultConfig {
+        applicationId "com.example.hadass.calculator"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:26.+'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+}
+
+perfectoGradleSettings {
+    cloudURL "ps.perfectomobile.com"
+    securityToken "eyJhbGciOiJSUzI1NiJ9.eyJqdGkiOiI1YWM2MTRjZS1mNjAwLTRlNWMtYTliOS1hZjM3ODY2YjA0NDgiLCJleHAiOjAsIm5iZiI6MCwiaWF0IjoxNTA4MjM4MjA3LCJpc3MiOiJodHRwczovL2F1dGgucGVyZmVjdG9tb2JpbGUuY29tL2F1dGgvcmVhbG1zL3BzLXBlcmZlY3RvbW9iaWxlLWNvbSIsImF1ZCI6Im9mZmxpbmUtdG9rZW4tZ2VuZXJhdG9yIiwic3ViIjoiOTgwNGQ2NjQtOWNjMy00Njk2LWFkZDQtNmE0NGQ0ZGU5Y2I2IiwidHlwIjoiT2ZmbGluZSIsImF6cCI6Im9mZmxpbmUtdG9rZW4tZ2VuZXJhdG9yIiwic2Vzc2lvbl9zdGF0ZSI6IjIxZjE5Y2FiLWY0ZGYtNGUyMy1hMTlkLWM4NjEwMjdjNjg3NiIsImNsaWVudF9zZXNzaW9uIjoiNjFkMTIyZGItZWNjOC00YTc3LTkwMmEtMzA0NDAwOWE0NzY1IiwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsInZpZXctcHJvZmlsZSJdfX19.PLvUoOstaQrLmOAE7BAsL5Ac9v-TjCpeKdtqzsc7Cb5CzAm1zcZ6XPbyFKPhIHrBMrIpMAX_SxsQhlPkQS_Ad3HyuO3ukdm9jedqWBvbOFRlfi8gu5K2JzmrcO3MtWA0OUoWTH3aroBeRpuKFRIeIsJouSAni5xnKC_7uwsulspTe5ncFdY5tQNgeeBABAp9biR5Kbr9OwpF6GCcmkZ3EcGLBb8jpPNOPK80qvIlKWKqOKMASimVkzKPx4Kqtsp4mS-5i4Tq66Cg3y2o8r9ImuMQ4m2j_nFsoQtSHXeCNgt_W9HM4A74zDHHtd63jAo1Dyg8BGDL-nhhrh2MFqwrfw"
+}
